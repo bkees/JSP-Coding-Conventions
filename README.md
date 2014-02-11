@@ -1,36 +1,48 @@
-JSP Rulebook
-============
+UI Rulebook
+================
 
 Basic principles
 ----------------
 
-- Make sure there are no inline styles or events on any element.
-- Make sure to remove all E2 specific logic or code.
-- Remove any <input type='hidden'> that are no longer relevant.
-- Clean up the markup as follows prior to commiting.  No code should be commit without being cleaned first.
+- Do not use any inline styles or events.  CSS and JavaScript must be in their corresponding files.
+Bad:
+``` html
+<button style='color:red;' onclick='alert(1)'>DANGER!</button>
+```
+
+Good:
+``` html
+<button class='redAlertBtn'>DANGER!</button>
+```
+
+- When bringing in code to a new framework from an older piece of software, it is imperative that none of the old, unused code remain.  This is important because it makes understanding the code more difficult, might affect performance, and may even be a security concern.
+Example:
+``` html
+<input type='hidden' name='op' value='(<script>alert(1)</script>)'>
+```
+
+- Do not use any IDs in your pages.  Since content can be duplicated at any time (with split screen), duplicate content will occur.  IDs by definition must be unique on a page and duplicating them will cause issues.
 
 
-JSP STYLE GUIDE
 
-IDE:
-- Please use Tabs, not spaces.
-- Each Tab width should represent a 4 space width, but not transform into actual spaces.
+- We employ a coding style accross all our JSPs.  Coding style is important for many reasons:
+	# It takes less mental effort and overall time for people who haven't worked on the code to figure out what the code is doing.
+	# It is easier on the eyes when trying to find a specific element amidst a wall of compact text.
+	# It ascertains that there is no broken code by using indentation as a validation tool.  If your opening and closing tags do not align vertically, you know there is a problem.
+
+
+
+
+
+IDE Configuration
+-----------------
+- Please use *Tabs*, not spaces.
+- Each Tab width should represent a *4 space width*, but not transform into actual spaces.
+
 
 
 HTML Tags
-- When you open an HTML tag, anything after that line must have an additional Tab of indentation up until the corresponding closing tag.  
-- All closing tags move back one level of indentation.
-- The closing tag must -always- be vertically aligned with its opening tag. (No exceptions)
-
-example:
-```
-<div class='world'>
-    Hello!
-    <span>
-        World?
-    </span>
-</div>
-```
+---------
 
 - Whenever you open an HTML tag, you must place that element's contents on the following line.  Avoid inlining any content, even if it is simple.
 
@@ -45,6 +57,21 @@ Good:
     Hello!
 </div>
 ```
+
+- The inner content should always be one level of indent deeper than its enclosing tag (+1 tab).
+- All closing tags are one level of indent outside the current indent level (-1 tab).
+- Any closing tags must *always* be vertically aligned with its opening tag. 
+example:
+```
+<div class='world'>
+    Hello!
+    <span>
+        World?
+    </span>
+</div>
+```
+
+
 
 - Do not indent by more than one level at a time
 Bad:
@@ -67,30 +94,38 @@ Good:
 
 
 
-JSP
-- JSP scriptlet opening and closing tags must be on their own lines.
+JSP Scriptlets & Expressions
+----------------------------
+
+- JSP __scriptlet__ opening and closing tags must be on their own lines.
 Bad:
-```
+``` jsp
 <%String apple = "apple";%>
 ```
 
 Good:
-```
+``` jsp
 <%
 String apple = "apple";
 %>
 ```
 
+- However, JSP __Expressions__ must be inlined.
+Example:
+``` jsp
+<%= Something(); %>
+```
+
 - Do not indent the contents of JSP scriptlets.
 Bad:
-```
+``` jsp
 <%
     String apple = "hello";
 %>
 ```
 
 Good:
-```
+``` jsp
 <%
 String apple = "apple";
 %>
@@ -98,10 +133,19 @@ String apple = "apple";
 
 - JSP scriptlets must obey the indentation principles of HTML documents as well as Java code.
 Bad:
-```
+``` jsp
 <div  class='hello'>
 <%
 String apple = "apple";
+%>
+</div>
+```
+
+Bad:
+``` jsp
+<div  class='hello'>
+<%
+	String apple = "apple";
 %>
 </div>
 ```
@@ -115,8 +159,22 @@ Good:
 </div>
 ```
 
+
+- You must include opening and closing curly braces wherever possible.
+- Opening and closing braces must always be on their own lines.
+
+Bad:
+``` java
+if (x == true) return true;
+```
+
 Bad:
 ```
+if (x == true) {return true;}
+```
+
+Bad:
+``` jsp
 <div  class='hello'>
     <%
     if (x == true)
@@ -128,7 +186,7 @@ Bad:
 ```
 
 Good:
-```
+``` jsp
 <div  class='hello'>
     <%
     if (x == true)
@@ -139,53 +197,48 @@ Good:
 </div>
 ```
 
-- You must always include opening and closing braces
+
+
+- As a rule, if the JSP you are working on is complex, it is your responsibility to make it less complex.
 Bad:
-```
-if (x == true) return true;
-```
-
-Good:
-```
-if (x == true) 
-{
-    return true;
-}
-```
-
-- Opening and closing braces must always be on their own lines
-
-
-Bad:
-```
-if (x == true) {return true;}
-```
-
-Good:
-```
-if (x == true) 
-{
-    return true;
-}
-```
-
-
-- As a rule, if a JSP you are working on is complex, it is your responsibility to make it less complex.
-Example:
 ```
 <div class='section'>
     <%
-    if (x == true)
+    while(zebraStripes--)
     {
-        %>
-        </div>
-        <%
-    }
-    etc...
+    	if (x == true)
+	    {
+	        %>
+	        </div>
+	        <%
+	    }
+	   	else
+	   	{
+	    	<%
+	    	<p class='stripe'>This is not striped.</p>
+	    	%>
+	    }
+	}
+	%>
+```
+
+Good:
+```
+<div class='section'>
+    <%
+    while(zebraStripes--)
+    {
+    	<%
+    	<p class='stripe'>This is not striped.</p>
+    	%>
+	}
+	%>
 </div>
 ```
 
 > Since closing tags must always be on the previous indent level, this JSP's markup is overly complex.  It is very difficult to understand the flow of the page from the code and to gaze through the different sections at a glance.
+
+
 
 
 
