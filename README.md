@@ -1,25 +1,40 @@
 UI Rulebook
 ================
 
-Basic principles
+General Rules
 ----------------
 
-- Do not use any inline styles or events.  CSS and JavaScript must be in their corresponding files.
+- No inline CSS or JS. CSS and JavaScript must be in their corresponding files.
 ``` html
 <!-- Bad -->
-<button style='color:red;' onclick='alert(1)'>DANGER!</button>
+<button style='color:red;' onclick='alert(1)'>
+	DANGER!
+</button>
 
 <!-- Good -->
-<button class='redAlertBtn'>DANGER!</button>
+<button class='redAlertBtn'>
+	DANGER!
+</button>
 ```
 
-- When bringing in code to a new framework from an older piece of software, it is imperative that none of the old, unused code remain.  This is important because it makes understanding the code more difficult, might affect performance, and may even be a security concern.
-Example:
+- Remove dead code. When bringing in code to a new framework from an older piece of software, it is imperative that none of the old, unused code remain.  This is important because it makes understanding the code more difficult, might affect performance, and may even be a security concern.
 ``` html
+<!-- Example -->
 <input type='hidden' name='op' value='(<script>alert(1)</script>)'>
 ```
 
-- Do not use any IDs in your pages.  Since content can be duplicated at any time (with split screen), duplicate content will occur.  IDs by definition must be unique on a page and duplicating them will cause issues.
+- No IDs. Do not use any HTML IDs.  Use classes instead.  Content may be duplicated at some times and, since IDs should be unique, may cause errors.
+``` html
+<!-- Bad -->
+<button id='rareSection'>
+	DANGER!
+</button>
+
+<!-- Good -->
+<button class='rareSection'>
+	DANGER!
+</button>
+```
 
 
 
@@ -30,8 +45,6 @@ Example:
 
 
 
-
-
 IDE Configuration
 -----------------
 - Please use *Hard Tabs*, not spaces.
@@ -39,18 +52,29 @@ IDE Configuration
 
 
 
+Naming conventions
+-----------------
+- Use camelCase.  It is our naming convention of choice.
+``` js
+// Bad
+var Alpha_dog = true;
+
+// Good
+var alphaDog = true;
+```
+
+
+
+
 HTML Tags
 ---------
 
 - Whenever you open an HTML tag, you must place that element's contents on the following line.  Avoid inlining any content, even if it is simple.
-
-BAD:
-```
+``` html
+<!-- Bad -->
 <div class='hello'>World!</div>
-```
 
-Good:
-```
+<!-- Good -->
 <div class='world'>
     Hello!
 </div>
@@ -59,8 +83,8 @@ Good:
 - The inner content should always be one level of indent deeper than its enclosing tag (+1 tab).
 - All closing tags are one level of indent outside the current indent level (-1 tab).
 - Any closing tags must *always* be vertically aligned with its opening tag. 
-example:
 ```
+<!-- Good -->
 <div class='world'>
     Hello!
     <span>
@@ -72,17 +96,15 @@ example:
 
 
 - Do not indent by more than one level at a time
-Bad:
-```
+``` html
+<!-- Bad -->
 <div>
         <span>
             Apple
         </span>
 </div>
-```
 
-Good:
-```
+<!-- Good -->
 <div>
     <span>
         Apple
@@ -96,60 +118,51 @@ JSP Scriptlets & Expressions
 ----------------------------
 
 - JSP __scriptlet__ opening and closing tags must be on their own lines.
-Bad:
 ``` jsp
+// Bad
 <%String apple = "apple";%>
-```
 
-Good:
-``` jsp
+// Good
 <%
 String apple = "apple";
 %>
 ```
 
 - However, JSP __Expressions__ must be inlined.
-Example:
 ``` jsp
 <%= Something(); %>
 ```
 
 - Do not indent the contents of JSP scriptlets.
-Bad:
 ``` jsp
+// Bad
 <%
     String apple = "hello";
 %>
-```
 
-Good:
-``` jsp
+// Good
 <%
 String apple = "apple";
 %>
 ```
 
 - JSP scriptlets must obey the indentation principles of HTML documents as well as Java code.
-Bad:
 ``` jsp
+// Bad
 <div  class='hello'>
 <%
 String apple = "apple";
 %>
 </div>
-```
 
-Bad:
-``` jsp
+// Bad
 <div  class='hello'>
 <%
 	String apple = "apple";
 %>
 </div>
-```
 
-Good:
-```
+// Good
 <div  class='hello'>
     <%
     String apple = "apple";
@@ -161,18 +174,14 @@ Good:
 - You must include opening and closing curly braces wherever possible.
 - Opening and closing braces must always be on their own lines.
 
-Bad:
 ``` java
+// Bad
 if (x == true) return true;
-```
 
-Bad:
-```
+// Bad
 if (x == true) {return true;}
-```
 
-Bad:
-``` jsp
+// still bad
 <div  class='hello'>
     <%
     if (x == true)
@@ -181,10 +190,8 @@ Bad:
     }
     %>
 </div>
-```
 
-Good:
-``` jsp
+// Good
 <div  class='hello'>
     <%
     if (x == true)
@@ -198,8 +205,8 @@ Good:
 
 
 - As a rule, if the JSP you are working on is complex, it is your responsibility to make it less complex.
-Bad:
-```
+``` html
+<!-- Bad -->
 <div class='section'>
     <%
     while(zebraStripes--)
@@ -218,10 +225,9 @@ Bad:
 	    }
 	}
 	%>
-```
 
-Good:
-```
+
+<!-- Good -->
 <div class='section'>
     <%
     while(zebraStripes--)
