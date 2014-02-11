@@ -26,9 +26,9 @@ Example:
 
 
 - We employ a coding style accross all our JSPs.  Coding style is important for many reasons:
-	# It takes less mental effort and overall time for people who haven't worked on the code to figure out what the code is doing.
-	# It is easier on the eyes when trying to find a specific element amidst a wall of compact text.
-	# It ascertains that there is no broken code by using indentation as a validation tool.  If your opening and closing tags do not align vertically, you know there is a problem.
+	1. It takes less mental effort and overall time for people who haven't worked on the code to figure out what the code is doing.
+	2. It is easier on the eyes when trying to find a specific element amidst a wall of compact text.
+	3. It ascertains that there is no broken code by using indentation as a validation tool.  If your opening and closing tags do not align vertically, you know there is a problem.
 
 
 
