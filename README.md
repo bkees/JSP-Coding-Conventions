@@ -5,13 +5,11 @@ Basic principles
 ----------------
 
 - Do not use any inline styles or events.  CSS and JavaScript must be in their corresponding files.
-Bad:
 ``` html
+<!-- Bad -->
 <button style='color:red;' onclick='alert(1)'>DANGER!</button>
-```
 
-Good:
-``` html
+<!-- Good -->
 <button class='redAlertBtn'>DANGER!</button>
 ```
 
@@ -36,8 +34,8 @@ Example:
 
 IDE Configuration
 -----------------
-- Please use *Tabs*, not spaces.
-- Each Tab width should represent a *4 space width*, but not transform into actual spaces.
+- Please use *Hard Tabs*, not spaces.
+- Each Tab should be configured to a *4 space width*.
 
 
 
