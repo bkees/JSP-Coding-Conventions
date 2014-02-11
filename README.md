@@ -4,7 +4,7 @@ UI Rulebook
 General Rules
 ----------------
 
-- No inline CSS or JS. CSS and JavaScript must be in their corresponding files.
+- **No inline CSS or JS:** CSS and JavaScript must be in their corresponding files.
 ``` html
 <!-- Bad -->
 <button style='color:red;' onclick='alert(1)'>
@@ -17,13 +17,13 @@ General Rules
 </button>
 ```
 
-- Remove dead code. When bringing in code to a new framework from an older piece of software, it is imperative that none of the old, unused code remain.  This is important because it makes understanding the code more difficult, might affect performance, and may even be a security concern.
+- **Remove dead code:** When bringing in code to a new framework from an older piece of software, it is imperative that none of the old, unused code remain.  This is important because it makes understanding the code more difficult, might affect performance, and may even be a security concern.
 ``` html
 <!-- Example -->
 <input type='hidden' name='op' value='(<script>alert(1)</script>)'>
 ```
 
-- No IDs. Do not use any HTML IDs.  Use classes instead.  Content may be duplicated at some times and, since IDs should be unique, may cause errors.
+- **No IDs:** Do not use any HTML IDs.  Use classes instead.  Content may be duplicated at some times and, since IDs should be unique, may cause errors.
 ``` html
 <!-- Bad -->
 <button id='rareSection'>
@@ -38,7 +38,7 @@ General Rules
 
 
 
-- We employ a coding style accross all our JSPs.  Coding style is important for many reasons:
+- **Coding Style:**  Coding style is important for many reasons:
 	1. It takes less mental effort and overall time for people who haven't worked on the code to figure out what the code is doing.
 	2. It is easier on the eyes when trying to find a specific element amidst a wall of compact text.
 	3. It ascertains that there is no broken code by using indentation as a validation tool.  If your opening and closing tags do not align vertically, you know there is a problem.
