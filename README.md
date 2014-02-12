@@ -175,11 +175,70 @@ Coding conventions are a set of guidelines that promote software maintenance.
 
 
 
+## <a name='comments'>Comments</a>
+
+### HTML Comments
+  - Do not use HTML comments.  It adds overhead to each request as it is sent to the users.  Instead, use JSP comments.
+
+### JSP Comments
+  - Single line comments with //, multi-line comments with /* */
+  - Don't explain each word of the code unless it is very cryptic.  Instead, explain why you are doing it.
+  - Complex functions should be summarized above the function declaration.
 
 
 
 
 
+## <a name='naming-convention'>Naming Convention</a>
+
+For all file naming, use camelCase.
+
+  ### JS Filenames
+    - If working on a section plugin, name it after the section and append "Section" to the name.
+      ```
+      documentSection.js
+      contactSection.js
+      ```
+
+    - If working on a page script, name it after the JSP filename
+      ```
+      editPoUI.jsp -> editPoUI.js
+      ```
+
+    - If working on a particular UI element, name it after the element
+      ```
+      // example
+      filterButton.js
+      userDetails.js
+      eTable.js
+      ```
+
+  ### Handlebar Filenames
+    - If plugin specific, name it after the plugin
+      ```
+      documentSection.js -> documentSection.handlebars
+      ```
+
+    - If generic, name it after the ui element
+      ```
+      contextMenu.handlebars
+      ``
+
+
+  ### In Code
+    - Use camelCase.  It is our naming convention of choice.
+      ``` js
+      // Bad
+      var Alpha_dog = true;
+
+      // Good
+      var alphaDog = true;
+      ```
+  
+
+
+
+# General
 
   - **No inline CSS or JS:** CSS and JavaScript must be in their corresponding files
 
@@ -225,17 +284,6 @@ Coding conventions are a set of guidelines that promote software maintenance.
 
 
 
-
-Naming conventions
------------------
-- Use camelCase.  It is our naming convention of choice.
-	``` js
-	// Bad
-	var Alpha_dog = true;
-
-	// Good
-	var alphaDog = true;
-	```
 
 
 
