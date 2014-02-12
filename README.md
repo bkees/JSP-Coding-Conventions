@@ -4,7 +4,8 @@ UI Rulebook
 General Rules
 ----------------
 
-- **No inline CSS or JS:** CSS and JavaScript must be in their corresponding files.
+  - **No inline CSS or JS:** CSS and JavaScript must be in their corresponding files.
+
 	``` html
 	<!-- Bad -->
 	<button style='color:red;' onclick='alert(1)'>
@@ -17,13 +18,17 @@ General Rules
 	</button>
 	```
 
-- **Remove dead code:** When bringing in code to a new framework from an older piece of software, it is imperative that none of the old, unused code remain.  This is important because it makes understanding the code more difficult, might affect performance, and may even be a security concern.
+
+  - **Remove dead code:** When bringing in code to a new framework from an older piece of software, it is imperative that none of the old, unused code remain.  This is important because it makes understanding the code more difficult, might affect performance, and may even be a security concern.
+	
 	``` html
 	<!-- Example -->
 	<input type='hidden' name='op' value='(<script>alert(1)</script>)'>
 	```
 
-- **No IDs:** Do not use any HTML IDs.  Use classes instead.  Content may be duplicated at some times and, since IDs should be unique, may cause errors.
+
+  - **No IDs:** Do not use any HTML IDs.  Use classes instead.  Content may be duplicated at some times and, since IDs should be unique, may cause errors.
+	
 	``` html
 	<!-- Bad -->
 	<button id='rareSection'>
@@ -133,7 +138,7 @@ JSP Scriptlets & Expressions
 	<%= Something(); %>
 	```
 
-	- Do not indent the contents of JSP scriptlets.
+- Do not indent the contents of JSP scriptlets.
 	``` jsp
 	// Bad
 	<%
