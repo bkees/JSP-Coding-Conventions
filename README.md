@@ -16,8 +16,7 @@ Coding conventions are a set of guidelines that promote software maintenance.
   + 40%-80% of the lifetime cost of a piece of software goes into maintenance. 
   + Hardly any software is maintained for its whole life by the original author.
   + Code conventions improve the readability of the software, allowing engineers to understand new code more quickly and thoroughly.
-  + It can provide a simple layers for code validation, reducing the likelihood of bugs.
-  + It can provide confidence for automation, reducing the risk of breaking things if you need to do a project wide fix.
+  + It provides simple layers for code validation, reducing the likelihood of bugs and increasing development speed.
 
 > Source: [Wikipedia](http://en.wikipedia.org/wiki/Coding_conventions)
 
@@ -32,8 +31,48 @@ Coding conventions are a set of guidelines that promote software maintenance.
 
 
 ## <a name='indentation'>Indentation</a>
+  - HTML tags, curly braces, and JSP scriptlet tags must all be on their own lines.
+    ``` html
+    <!-- Bad -->
+    <div class='hello'>World!</div>
+
+    <!-- Good -->
+    <div class='world'>
+        Hello!
+    </div>
+
+
+    <!-- Bad -->
+    <% doFunc(); %>
+    
+    <% doFunc2();
+    %>
+
+    <%
+    doFunc3(); %>
+
+
+    <!-- Good -->
+    <%
+    doFunc4();
+    %>
+
+
+    <!-- Bad -->
+    if (x == true) {
+      return true;
+    }
+
+    <!-- Good -->
+    if (x == true) 
+    {
+      return true;
+    }
+
+    ```
+
   
-  - Opening HTML tags and curly braces set the indent one level deeper.
+  - Opening HTML tags set the indent one level deeper.
     
     ``` html
     <!-- Bad -->
@@ -50,6 +89,13 @@ Coding conventions are a set of guidelines that promote software maintenance.
   - Any closing tags must *always* be vertically aligned with its opening tag, moving the indent outwards by one tab. 
   	
     ``` html
+    <!-- Bad -->
+    <div class='world'>
+        Hello!
+        <span>
+            World?</span>
+        </div>
+
   	<!-- Good -->
   	<div class='world'>
   	    Hello!
@@ -118,7 +164,7 @@ Coding conventions are a set of guidelines that promote software maintenance.
     // Bad
     <div  class='hello'>
     <%
-      String apple = "apple";
+        String apple = "apple";
     %>
     </div>
 
@@ -186,11 +232,6 @@ Coding conventions are a set of guidelines that promote software maintenance.
 
 
 
-IDE Configuration
------------------
-
-
-
 Naming conventions
 -----------------
 - Use camelCase.  It is our naming convention of choice.
@@ -204,9 +245,6 @@ Naming conventions
 
 
 
-
-HTML Tags
----------
 
 
 
