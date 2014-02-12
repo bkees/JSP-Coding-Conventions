@@ -44,13 +44,6 @@ Coding conventions are a set of guidelines that promote software maintenance.
 
     <!-- Bad -->
     <% doFunc(); %>
-    
-    <% doFunc2();
-    %>
-
-    <%
-    doFunc3(); %>
-
 
     <!-- Good -->
     <%
@@ -59,9 +52,7 @@ Coding conventions are a set of guidelines that promote software maintenance.
 
 
     <!-- Bad -->
-    if (x == true) {
-        return true;
-    }
+    if (x == true) { return true; }
 
     <!-- Good -->
     if (x == true) 
@@ -85,6 +76,7 @@ Coding conventions are a set of guidelines that promote software maintenance.
         Hello!
     </div>
 
+
     <!-- Bad -->
     if (x == true) 
     {
@@ -99,7 +91,7 @@ Coding conventions are a set of guidelines that promote software maintenance.
 
 
 
-    <!-- Bad -->
+    <!-- !Bad! -->
     <%
         doFunc1();
     %>
