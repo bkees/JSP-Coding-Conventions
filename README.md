@@ -16,7 +16,7 @@ Coding conventions are a set of guidelines that promote software maintenance.
   + Hardly any software is maintained for its whole life by the original author.
   + Code conventions improve the readability of the software, allowing engineers to understand new code more quickly and thoroughly.
   	
-  	> Source: [Wikipedia](http://en.wikipedia.org/wiki/Coding_conventions)
+  > Source: [Wikipedia](http://en.wikipedia.org/wiki/Coding_conventions)
 
 
   - **No inline CSS or JS:** CSS and JavaScript must be in their corresponding files
