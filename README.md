@@ -30,43 +30,44 @@
 
   - **No inline CSS or JS:** CSS and JavaScript must be in their corresponding files
 
-		```html
-		<!-- Bad -->
-		<button style='color:red;' onclick='alert(1)'>
-			DANGER!
-		</button>
+	```html
+	<!-- Bad -->
+	<button style='color:red;' onclick='alert(1)'>
+		DANGER!
+	</button>
 
-		<!-- Good -->
-		<button class='redAlertBtn'>
-			DANGER!
-		</button>
-		``
-	- **Remove dead code:** When bringing in code to a new framework from an older piece of software, it is imperative that none of the old, unused code remain.  This is important because it makes understanding the code more difficult, might affect performance, and may even be a security concern.
+	<!-- Good -->
+	<button class='redAlertBtn'>
+		DANGER!
+	</button>
+	```
+
+  - **Remove dead code:** When bringing in code to a new framework from an older piece of software, it is imperative that none of the old, unused code remain.  This is important because it makes understanding the code more difficult, might affect performance, and may even be a security concern.
 	
-		``` html
-		<!-- Example -->
-		<input type='hidden' name='op' value='(<script>alert(1)</script>)'>
-		```
+	``` html
+	<!-- Example -->
+	<input type='hidden' name='op' value='(<script>alert(1)</script>)'>
+	```
 
-	- **No IDs:** Do not use any HTML IDs.  Use classes instead.  Content may be duplicated at some times and, since IDs should be unique, may cause errors.
+  - **No IDs:** Do not use any HTML IDs.  Use classes instead.  Content may be duplicated at some times and, since IDs should be unique, may cause errors.
 		
-		``` html
-		<!-- Bad -->
-		<button id='rareSection'>
-			DANGER!
-		</button>
+	``` html
+	<!-- Bad -->
+	<button id='rareSection'>
+		DANGER!
+	</button>
 
-		<!-- Good -->
-		<button class='rareSection'>
-			DANGER!
-		</button>
-		```
+	<!-- Good -->
+	<button class='rareSection'>
+		DANGER!
+	</button>
+	```
 
-	- **Coding Style:**  Coding style is important for many reasons:
+  - **Coding Style:**  Coding style is important for many reasons:
 		
-		+ It takes less mental effort and overall time for people who haven't worked on the code to figure out what the code is doing.
-		+ It is easier on the eyes when trying to find a specific element amidst a wall of compact text.
-		+ It ascertains that there is no broken code by using indentation as a validation tool.  If your opening and closing tags do not align vertically, you know there is a problem.
+	+ It takes less mental effort and overall time for people who haven't worked on the code to figure out what the code is doing.
+	+ It is easier on the eyes when trying to find a specific element amidst a wall of compact text.
+	+ It ascertains that there is no broken code by using indentation as a validation tool.  If your opening and closing tags do not align vertically, you know there is a problem.
   
 
     **[[⬆]](#TOC)**
