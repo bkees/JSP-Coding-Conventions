@@ -60,19 +60,19 @@ Coding conventions are a set of guidelines that promote software maintenance.
 
     <!-- Bad -->
     if (x == true) {
-      return true;
+        return true;
     }
 
     <!-- Good -->
     if (x == true) 
     {
-      return true;
+        return true;
     }
 
     ```
 
   
-  - Opening HTML tags set the indent one level deeper.
+  - HTML tags and curly braces force a level of indentation.  JSP scriptlets do *not*.
     
     ``` html
     <!-- Bad -->
@@ -84,6 +84,30 @@ Coding conventions are a set of guidelines that promote software maintenance.
     <div class='world'>
         Hello!
     </div>
+
+    <!-- Bad -->
+    if (x == true) 
+    {
+    return true;
+    }
+
+    <!-- Good -->
+    if (x == true) 
+    {
+        return true;
+    }
+
+
+
+    <!-- Bad -->
+    <%
+        doFunc1();
+    %>
+
+    <!-- Good -->
+    <%
+    doFunc2();
+    %>
     ```
 
   - Any closing tags must *always* be vertically aligned with its opening tag, moving the indent outwards by one tab. 
