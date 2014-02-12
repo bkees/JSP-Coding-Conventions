@@ -1,4 +1,4 @@
-# UI Conventions
+# JSP Coding Conventions
 
 ## <a name='TOC'>Table of Contents</a>
 
