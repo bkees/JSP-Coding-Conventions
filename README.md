@@ -213,10 +213,13 @@ For all file naming, use camelCase.
 
 ### Handlebars Filenames
   - Name your templates after the JS files calling it
-    ```
+    ``` html
     contactSection.js -> contactSection.handlebars
+
     documentSection.js -> documentSection.handlebars
+
     eTable.js -> eTable.handlebars
+    
     contextMenu.js -> contextMenu.handlebars
     ```
 
