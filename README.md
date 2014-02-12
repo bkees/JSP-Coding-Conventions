@@ -3,6 +3,7 @@
 ## <a name='TOC'>Table of Contents</a>
 
   1. [General](#general)
+  1. [Tabbing](#tabbing)
   1. [Indentation](#indentation)
   1. [Comments](#comments)
   1. [Naming Convention](#naming-convention)
@@ -11,11 +12,133 @@
 
 ## <a name='general'>General</a>
 
-Coding conventions are a set of guidelines that promote software maintenance.  
-  + 40%-80% of the lifetime cost of a piece of software goes into maintenance. 
-  + Hardly any software is maintained for its whole life by the original author.
-  + Code conventions improve the readability of the software, allowing engineers to understand new code more quickly and thoroughly.
-> Source: [Wikipedia](http://en.wikipedia.org/wiki/Coding_conventions)
+  Coding conventions are a set of guidelines that promote software maintenance.  
+    + 40%-80% of the lifetime cost of a piece of software goes into maintenance. 
+    + Hardly any software is maintained for its whole life by the original author.
+    + Code conventions improve the readability of the software, allowing engineers to understand new code more quickly and thoroughly.
+    + It can provide a simple layers for code validation, reducing the likelihood of bugs.
+    + It can provide confidence for automation, reducing the risk of breaking things if you need to do a project wide fix.
+
+  > Source: [Wikipedia](http://en.wikipedia.org/wiki/Coding_conventions)
+
+  **[[⬆]](#TOC)**
+
+
+## <a name='tabbing'>Tabbing</a>
+
+  Use 4 space width *hard* tabs. Set your IDE to tab this way for you from the start.
+
+  **[[⬆]](#TOC)**
+
+
+## <a name='indentation'>Indentation</a>
+  
+  - Opening HTML tags and curly braces set the indent one level deeper.
+    
+    ``` html
+    <!-- Bad -->
+    <div class='hello'>
+    World!
+    </div>
+
+    <!-- Good -->
+    <div class='world'>
+        Hello!
+    </div>
+    ```
+
+  - Any closing tags must *always* be vertically aligned with its opening tag, moving the indent outwards by one tab. 
+  	
+    ``` html
+  	<!-- Good -->
+  	<div class='world'>
+  	    Hello!
+  	    <span>
+  	        World?
+  	    </span>
+  	</div>
+  	```
+
+  - Do not indent by more than one level at a time.
+  	
+    ``` html
+  	<!-- Bad -->
+  	<div>
+  	        <span>
+  	            Apple
+  	        </span>
+  	</div>
+
+  	<!-- Good -->
+  	<div>
+  	    <span>
+  	        Apple
+  	    </span>
+  	</div>
+  	```
+
+  - JSP __scriptlet__ opening and closing tags must be on their own lines.
+    ``` jsp
+    // Bad
+    <%String apple = "apple";%>
+
+    // Good
+    <%
+    String apple = "apple";
+    %>
+    ```
+
+  - However, JSP __Expressions__ must be inlined.
+    ``` jsp
+    <%= Something(); %>
+    ```
+
+  - Do not indent the contents of JSP scriptlets.
+    ``` jsp
+    // Bad
+    <%
+        String apple = "hello";
+    %>
+
+    // Good
+    <%
+    String apple = "apple";
+    %>
+    ```
+
+  - JSP scriptlets must obey the indentation principles of HTML documents as well as Java code.
+    ``` jsp
+    // Bad
+    <div  class='hello'>
+    <%
+    String apple = "apple";
+    %>
+    </div>
+
+    // Bad
+    <div  class='hello'>
+    <%
+      String apple = "apple";
+    %>
+    </div>
+
+    // Good
+    <div  class='hello'>
+        <%
+        String apple = "apple";
+        %>
+    </div>
+    ```
+    
+  **[[⬆]](#TOC)**
+
+
+
+
+
+
+
+
 
 
   - **No inline CSS or JS:** CSS and JavaScript must be in their corresponding files
@@ -53,14 +176,11 @@ Coding conventions are a set of guidelines that promote software maintenance.
 	</button>
 	```
 
-  - **Coding Conventions:**  We place a very heavy emphasis on coding style.  An applied style to a large scale project has numerous positive benefits at minimal costs.
-		
-	+ It takes less mental effort and overall time for people who haven't worked on the code to figure out what the code is doing.
-	+ It is easier on the eyes when trying to find a specific element amidst a wall of compact text.
-	+ It ascertains that there is no broken code by using indentation as a validation tool.  If your opening and closing tags do not align vertically, you know there is a problem.
+
+	
   
 
-    **[[⬆]](#TOC)**
+    
 
 
 
@@ -68,8 +188,6 @@ Coding conventions are a set of guidelines that promote software maintenance.
 
 IDE Configuration
 -----------------
-- Please use *Hard Tabs*, not spaces.
-- Each Tab should be configured to a *4 space width*.
 
 
 
@@ -90,106 +208,14 @@ Naming conventions
 HTML Tags
 ---------
 
-- Whenever you open an HTML tag, you must place that element's contents on the following line.  Avoid inlining any content, even if it is simple.
-	``` html
-	<!-- Bad -->
-	<div class='hello'>World!</div>
 
-	<!-- Good -->
-	<div class='world'>
-	    Hello!
-	</div>
-	```
-
-- The inner content should always be one level of indent deeper than its enclosing tag (+1 tab).
-- All closing tags are one level of indent outside the current indent level (-1 tab).
-- Any closing tags must *always* be vertically aligned with its opening tag. 
-	```
-	<!-- Good -->
-	<div class='world'>
-	    Hello!
-	    <span>
-	        World?
-	    </span>
-	</div>
-	```
-
-
-
-- Do not indent by more than one level at a time
-	``` html
-	<!-- Bad -->
-	<div>
-	        <span>
-	            Apple
-	        </span>
-	</div>
-
-	<!-- Good -->
-	<div>
-	    <span>
-	        Apple
-	    </span>
-	</div>
-	```
 
 
 
 JSP Scriptlets & Expressions
 ----------------------------
 
-- JSP __scriptlet__ opening and closing tags must be on their own lines.
-	``` jsp
-	// Bad
-	<%String apple = "apple";%>
 
-	// Good
-	<%
-	String apple = "apple";
-	%>
-	```
-
-- However, JSP __Expressions__ must be inlined.
-	``` jsp
-	<%= Something(); %>
-	```
-
-- Do not indent the contents of JSP scriptlets.
-	``` jsp
-	// Bad
-	<%
-	    String apple = "hello";
-	%>
-
-	// Good
-	<%
-	String apple = "apple";
-	%>
-	```
-
-- JSP scriptlets must obey the indentation principles of HTML documents as well as Java code.
-	``` jsp
-	// Bad
-	<div  class='hello'>
-	<%
-	String apple = "apple";
-	%>
-	</div>
-
-	// Bad
-	<div  class='hello'>
-	<%
-		String apple = "apple";
-	%>
-	</div>
-
-	// Good
-	<div  class='hello'>
-	    <%
-	    String apple = "apple";
-	    %>
-	</div>
-	```
 
 
 - You must include opening and closing curly braces wherever possible.
