@@ -12,12 +12,12 @@
 
 ## <a name='general'>General</a>
 
-  Coding conventions are a set of guidelines that promote software maintenance.  
-    + 40%-80% of the lifetime cost of a piece of software goes into maintenance. 
-    + Hardly any software is maintained for its whole life by the original author.
-    + Code conventions improve the readability of the software, allowing engineers to understand new code more quickly and thoroughly.
-    + It can provide a simple layers for code validation, reducing the likelihood of bugs.
-    + It can provide confidence for automation, reducing the risk of breaking things if you need to do a project wide fix.
+Coding conventions are a set of guidelines that promote software maintenance.  
+  + 40%-80% of the lifetime cost of a piece of software goes into maintenance. 
+  + Hardly any software is maintained for its whole life by the original author.
+  + Code conventions improve the readability of the software, allowing engineers to understand new code more quickly and thoroughly.
+  + It can provide a simple layers for code validation, reducing the likelihood of bugs.
+  + It can provide confidence for automation, reducing the risk of breaking things if you need to do a project wide fix.
 
   > Source: [Wikipedia](http://en.wikipedia.org/wiki/Coding_conventions)
 
