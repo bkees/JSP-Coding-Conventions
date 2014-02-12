@@ -207,20 +207,17 @@ For all file naming, use camelCase.
   - If working on a particular UI element, name it after the element
     ```
     // example
-    filterButton.js
-    userDetails.js
+    contextMenu.js
     eTable.js
     ```
 
-### Handlebar Filenames
-  - If plugin specific, name it after the plugin
+### Handlebars Filenames
+  - Name your templates after the JS files calling it
     ```
+    contactSection.js -> contactSection.handlebars
     documentSection.js -> documentSection.handlebars
-    ```
-
-  - If generic, name it after the ui element
-    ```
-    contextMenu.handlebars
+    eTable.js -> eTable.handlebars
+    contextMenu.js -> contextMenu.handlebars
     ```
 
 
@@ -228,10 +225,12 @@ For all file naming, use camelCase.
   - Use camelCase.  It is our naming convention of choice.
     ``` js
     // Bad
-    var Alpha_dog = false;
+    var Alpha_dog           = false,
+        badcamcelcasedemo   = true;
 
     // Good
-    var alphaDog = true;
+    var alphaDog            = true,
+        superCamelCaseDemo  = true;
     ```
   
   **[[⬆]](#TOC)**
