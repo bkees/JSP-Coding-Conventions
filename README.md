@@ -1,32 +1,22 @@
-# UI Rulebook
+# UI Conventions
 
 ## <a name='TOC'>Table of Contents</a>
 
-  1. [General Guidelines](#general-guidelines)
-  1. [Objects](#objects)
-  1. [Arrays](#arrays)
-  1. [Strings](#strings)
-  1. [Functions](#functions)
-  1. [Properties](#properties)
-  1. [Variables](#variables)
-  1. [Hoisting](#hoisting)
-  1. [Conditional Expressions & Equality](#conditionals)
-  1. [Blocks](#blocks)
+  1. [General](#general)
+  1. [Indentation](#indentation)
   1. [Comments](#comments)
-  1. [Whitespace](#whitespace)
-  1. [Commas](#commas)
-  1. [Semicolons](#semicolons)
-  1. [Type Casting & Coercion](#type-coercion)
-  1. [Naming Conventions](#naming-conventions)
-  1. [Accessors](#accessors)
-  1. [Constructors](#constructors)
-  1. [Events](#events)
-  1. [Modules](#modules)
-  1. [jQuery](#jquery)
-  1. [Performance](#performance)
-  1. [License](#license)
+  1. [Naming Convention](#naming-convention)
+  1. [White Space](#white-space)
+  1. [File Organization](#file-organization)
 
-## <a name='general-guidelines'>General Guidelines</a>
+## <a name='general'>General</a>
+
+Coding conventions are a set of guidelines that promote software maintenance.  
+  + 40%-80% of the lifetime cost of a piece of software goes into maintenance. 
+  + Hardly any software is maintained for its whole life by the original author.
+  + Code conventions improve the readability of the software, allowing engineers to understand new code more quickly and thoroughly.
+  	Source: [Wikipedia](http://en.wikipedia.org/wiki/Coding_conventions)
+
 
   - **No inline CSS or JS:** CSS and JavaScript must be in their corresponding files
 
@@ -63,7 +53,7 @@
 	</button>
 	```
 
-  - **Coding Style:**  Coding style is important for many reasons:
+  - **Coding Conventions:**  We place a very heavy emphasis on coding style.  An applied style to a large scale project has numerous positive benefits at minimal costs.
 		
 	+ It takes less mental effort and overall time for people who haven't worked on the code to figure out what the code is doing.
 	+ It is easier on the eyes when trying to find a specific element amidst a wall of compact text.
