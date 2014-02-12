@@ -243,79 +243,79 @@ For all file naming, use camelCase.
 
   - **No inline CSS or JS:** CSS and JavaScript must be in their corresponding files
 
-	```html
-	<!-- Bad -->
-	<button style='color:red;' onclick='alert(1)'>
-		DANGER!
-	</button>
+  	```html
+  	<!-- Bad -->
+  	<button style='color:red;' onclick='alert(1)'>
+  		DANGER!
+  	</button>
 
-	<!-- Good -->
-	<button class='redAlertBtn'>
-		DANGER!
-	</button>
-	```
+  	<!-- Good -->
+  	<button class='redAlertBtn'>
+  		DANGER!
+  	</button>
+  	```
+
+  - **No IDs:** Do not use any HTML IDs.  Use classes instead.  Content may be duplicated at some times and, since IDs should be unique, may cause errors.
+    
+    ``` html
+    <!-- Bad -->
+    <button id='rareSection'>
+      DANGER!
+    </button>
+
+    <!-- Good -->
+    <button class='rareSection'>
+      DANGER!
+    </button>
+    ```
+
 
   - **Remove dead code:** When bringing in code to a new framework from an older piece of software, it is imperative that none of the old, unused code remain.  This is important because it makes understanding the code more difficult, might affect performance, and may even be a security concern.
 	
-	``` html
-	<!-- Example -->
-	<input type='hidden' name='op' value='(<script>alert(1)</script>)'>
-	```
-
-  - **No IDs:** Do not use any HTML IDs.  Use classes instead.  Content may be duplicated at some times and, since IDs should be unique, may cause errors.
-		
-	``` html
-	<!-- Bad -->
-	<button id='rareSection'>
-		DANGER!
-	</button>
-
-	<!-- Good -->
-	<button class='rareSection'>
-		DANGER!
-	</button>
-	```
+  	``` html
+  	<!-- Example -->
+  	<input type='hidden' name='op' value='(<script>alert(1)</script>)'>
+  	```
 
 
+  - **Remove complex logic**: As a rule, if the JSP you are working on is complex, it is your responsibility to make it less complex.
+  	
+    ``` html
+  	<!-- Bad -->
+  	<div class='section'>
+  	    <%
+  	    while(zebraStripes--)
+  	    {
+  	    	if (x == true)
+  		    {
+  		        %>
+  		        </div>
+  		        <%
+  		    }
+  		   	else
+  		   	{
+  		    	<%
+  		    	<p class='stripe'>This is not striped.</p>
+  		    	%>
+  		    }
+  		}
+  		%>
 
 
-- As a rule, if the JSP you are working on is complex, it is your responsibility to make it less complex.
-	``` html
-	<!-- Bad -->
-	<div class='section'>
-	    <%
-	    while(zebraStripes--)
-	    {
-	    	if (x == true)
-		    {
-		        %>
-		        </div>
-		        <%
-		    }
-		   	else
-		   	{
-		    	<%
-		    	<p class='stripe'>This is not striped.</p>
-		    	%>
-		    }
-		}
-		%>
+  	<!-- Good -->
+  	<div class='section'>
+  	    <%
+  	    while(zebraStripes--)
+  	    {
+  	    	<%
+  	    	<p class='stripe'>This is not striped.</p>
+  	    	%>
+  		}
+  		%>
+  	</div>
+  	```
 
-
-	<!-- Good -->
-	<div class='section'>
-	    <%
-	    while(zebraStripes--)
-	    {
-	    	<%
-	    	<p class='stripe'>This is not striped.</p>
-	    	%>
-		}
-		%>
-	</div>
-	```
-
-> Since closing tags must always be on the previous indent level, this JSP's markup is overly complex.  It is very difficult to understand the flow of the page from the code and to gaze through the different sections at a glance.
+    > Since closing tags must always be on the previous indent level, this JSP's markup is overly complex.  It is very difficult to understand the flow of the page from the code and to gaze through the different sections at a glance.
 
 
 
