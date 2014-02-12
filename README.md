@@ -5,6 +5,7 @@
   1. [General](#general)
   1. [Tabbing](#tabbing)
   1. [Indentation](#indentation)
+  1. [Alignment](#alignment)
   1. [Comments](#comments)
   1. [Naming Convention](#naming-convention)
   1. [JSP](#jsp)
@@ -173,6 +174,14 @@ Coding conventions are a set of guidelines that promote software maintenance.
 
 
 
+## <a name='alignment'>Alignment</a>
+
+  Refer to Javascript Style Guide.
+
+  **[[⬆]](#TOC)**
+
+
+
 
 ## <a name='comments'>Comments</a>
 
@@ -219,7 +228,7 @@ For all file naming, use camelCase.
     documentSection.js -> documentSection.handlebars
 
     eTable.js -> eTable.handlebars
-    
+
     contextMenu.js -> contextMenu.handlebars
     ```
 
