@@ -19,9 +19,9 @@ Coding conventions are a set of guidelines that promote software maintenance.
   + It can provide a simple layers for code validation, reducing the likelihood of bugs.
   + It can provide confidence for automation, reducing the risk of breaking things if you need to do a project wide fix.
 
-  > Source: [Wikipedia](http://en.wikipedia.org/wiki/Coding_conventions)
+> Source: [Wikipedia](http://en.wikipedia.org/wiki/Coding_conventions)
 
-  **[[⬆]](#TOC)**
+**[[⬆]](#TOC)**
 
 
 ## <a name='tabbing'>Tabbing</a>
@@ -129,7 +129,7 @@ Coding conventions are a set of guidelines that promote software maintenance.
         %>
     </div>
     ```
-    
+
   **[[⬆]](#TOC)**
 
 
