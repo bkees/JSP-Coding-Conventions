@@ -63,7 +63,7 @@ Coding conventions are a set of guidelines that promote software maintenance.
     ```
 
   
-  - HTML tags and curly braces force a level of indentation.  JSP scriptlets do *not*.
+  - HTML tags and curly braces force a level of indentation.  __JSP scriptlets do *not*__.
     
     ``` html
     <!-- Bad -->
@@ -102,7 +102,7 @@ Coding conventions are a set of guidelines that promote software maintenance.
     %>
     ```
 
-  - Any closing tags must *always* be vertically aligned with its opening tag, moving the indent outwards by one tab. 
+  - Any closing tags must *always* be vertically aligned with its corresponding opening tag.
   	
     ``` html
     <!-- Bad -->
@@ -139,34 +139,12 @@ Coding conventions are a set of guidelines that promote software maintenance.
   	</div>
   	```
 
-  - JSP __scriptlet__ opening and closing tags must be on their own lines.
-    ``` jsp
-    // Bad
-    <%String apple = "apple";%>
 
-    // Good
-    <%
-    String apple = "apple";
-    %>
-    ```
-
-  - However, JSP __Expressions__ must be inlined.
+  - JSP **Expressions** must be inlined.
     ``` jsp
     <%= Something(); %>
     ```
 
-  - Do not indent the contents of JSP scriptlets.
-    ``` jsp
-    // Bad
-    <%
-        String apple = "hello";
-    %>
-
-    // Good
-    <%
-    String apple = "apple";
-    %>
-    ```
 
   - JSP scriptlets must obey the indentation principles of HTML documents as well as Java code.
     ``` jsp
