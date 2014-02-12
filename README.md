@@ -28,7 +28,7 @@
 
 ## <a name='general-guidelines'>General Guidelines</a>
 
-	- **No inline CSS or JS:** CSS and JavaScript must be in their corresponding files
+  - **No inline CSS or JS:** CSS and JavaScript must be in their corresponding files
 
 		```html
 		<!-- Bad -->
