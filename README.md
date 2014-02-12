@@ -193,47 +193,47 @@ Coding conventions are a set of guidelines that promote software maintenance.
 
 For all file naming, use camelCase.
 
-  ### JS Filenames
-    - If working on a section plugin, name it after the section and append "Section" to the name.
-      ```
-      documentSection.js
-      contactSection.js
-      ```
+### JS Filenames
+  - If working on a section plugin, name it after the section and append "Section" to the name.
+    ```
+    documentSection.js
+    contactSection.js
+    ```
 
-    - If working on a page script, name it after the JSP filename
-      ```
-      editPoUI.jsp -> editPoUI.js
-      ```
+  - If working on a page script, name it after the JSP filename
+    ```
+    editPoUI.jsp -> editPoUI.js
+    ```
 
-    - If working on a particular UI element, name it after the element
-      ```
-      // example
-      filterButton.js
-      userDetails.js
-      eTable.js
-      ```
+  - If working on a particular UI element, name it after the element
+    ```
+    // example
+    filterButton.js
+    userDetails.js
+    eTable.js
+    ```
 
-  ### Handlebar Filenames
-    - If plugin specific, name it after the plugin
-      ```
-      documentSection.js -> documentSection.handlebars
-      ```
+### Handlebar Filenames
+  - If plugin specific, name it after the plugin
+    ```
+    documentSection.js -> documentSection.handlebars
+    ```
 
-    - If generic, name it after the ui element
-      ```
-      contextMenu.handlebars
-      ``
+  - If generic, name it after the ui element
+    ```
+    contextMenu.handlebars
+    ``
 
 
-  ### In Code
-    - Use camelCase.  It is our naming convention of choice.
-      ``` js
-      // Bad
-      var Alpha_dog = true;
+### In Code
+  - Use camelCase.  It is our naming convention of choice.
+    ``` js
+    // Bad
+    var Alpha_dog = true;
 
-      // Good
-      var alphaDog = true;
-      ```
+    // Good
+    var alphaDog = true;
+    ```
   
 
 
