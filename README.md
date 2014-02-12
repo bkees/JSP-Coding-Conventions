@@ -7,8 +7,7 @@
   1. [Indentation](#indentation)
   1. [Comments](#comments)
   1. [Naming Convention](#naming-convention)
-  1. [White Space](#white-space)
-  1. [File Organization](#file-organization)
+  1. [JSP](#jsp)
 
 ## <a name='general'>General</a>
 
@@ -185,7 +184,7 @@ Coding conventions are a set of guidelines that promote software maintenance.
   - Don't explain each word of the code unless it is very cryptic.  Instead, explain why you are doing it.
   - Complex functions should be summarized above the function declaration.
 
-
+  **[[⬆]](#TOC)**
 
 
 
@@ -222,23 +221,25 @@ For all file naming, use camelCase.
   - If generic, name it after the ui element
     ```
     contextMenu.handlebars
-    ``
+    ```
 
 
 ### In Code
   - Use camelCase.  It is our naming convention of choice.
     ``` js
     // Bad
-    var Alpha_dog = true;
+    var Alpha_dog = false;
 
     // Good
     var alphaDog = true;
     ```
   
+  **[[⬆]](#TOC)**
 
 
 
-# General
+
+## <a name='jsp'>JSP</a>
 
   - **No inline CSS or JS:** CSS and JavaScript must be in their corresponding files
 
@@ -275,59 +276,6 @@ For all file naming, use camelCase.
 	</button>
 	```
 
-
-	
-  
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-JSP Scriptlets & Expressions
-----------------------------
-
-
-
-
-- You must include opening and closing curly braces wherever possible.
-- Opening and closing braces must always be on their own lines.
-
-	``` java
-	// Bad
-	if (x == true) return true;
-
-	// Bad
-	if (x == true) {return true;}
-
-	// still bad
-	<div  class='hello'>
-	    <%
-	    if (x == true)
-	    {
-	    String apple = "apple";
-	    }
-	    %>
-	</div>
-
-	// Good
-	<div  class='hello'>
-	    <%
-	    if (x == true)
-	    {
-	        String apple = "apple";
-	    }
-	    %>
-	</div>
-	```
 
 
 
