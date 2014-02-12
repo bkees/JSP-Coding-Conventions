@@ -5,17 +5,17 @@ General Rules
 ----------------
 
 - **No inline CSS or JS:** CSS and JavaScript must be in their corresponding files.
-``` html
-<!-- Bad -->
-<button style='color:red;' onclick='alert(1)'>
-	DANGER!
-</button>
+	``` html
+	<!-- Bad -->
+	<button style='color:red;' onclick='alert(1)'>
+		DANGER!
+	</button>
 
-<!-- Good -->
-<button class='redAlertBtn'>
-	DANGER!
-</button>
-```
+	<!-- Good -->
+	<button class='redAlertBtn'>
+		DANGER!
+	</button>
+	```
 
 - **Remove dead code:** When bringing in code to a new framework from an older piece of software, it is imperative that none of the old, unused code remain.  This is important because it makes understanding the code more difficult, might affect performance, and may even be a security concern.
 ``` html
